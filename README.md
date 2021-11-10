@@ -39,16 +39,8 @@ Pré-requisitos: Docker.
  }
 ```
 ---
-### Renovar Token de Acesso (POST localhost:8080/auth/refreshToken)
-#### Enviar body no seguinte formato. Será retornado o novo token de acesso.
-  ```
-  {
-    "refreshToken": "TokenDeRenovação"
- }
-```
----
 ### Ver todos os usuários (GET localhost:8080/user)
 #### Inserir token de acesso no header Authorization no formato Bearer Token.
 ---
-### Teste de validação de usuário com role GNDI (GET localhost:8080/user)
+### Teste de validação de usuário com role GNDI (GET localhost:8080/test/gndi)
 #### Inserir token de acesso no header Authorization no formato Bearer Token. Caso o role no cadastro seja algum outro, a request não será autorizada.
