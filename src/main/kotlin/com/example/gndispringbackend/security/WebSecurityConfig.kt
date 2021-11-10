@@ -45,8 +45,7 @@ class WebSecurityConfig(
 		http.cors().and().csrf().disable()
 			.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-			.authorizeRequests().antMatchers("/auth/**", "/user/**", "/actuator/health").permitAll()
-			.antMatchers("/test/**").permitAll()
+			.authorizeRequests().antMatchers("/auth/**", "/actuator/health").permitAll()
 			.anyRequest().authenticated()
 		http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter::class.java)
 	}
